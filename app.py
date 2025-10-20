@@ -8,7 +8,7 @@ import os
 # Configure Gemini
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-model = genai.GenerativeModel("gemini-2.5-pro-")
+model = genai.GenerativeModel("gemini-2.5-pro")
 app = FastAPI(title="Job Ad Cleaner Agent")
 
 app.add_middleware(
