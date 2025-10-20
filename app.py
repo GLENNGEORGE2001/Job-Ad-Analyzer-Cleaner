@@ -12,7 +12,7 @@ import re
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # ✅ Use the latest, stable model
-MODEL_NAME = "models/gemini-2.5-flash"
+MODEL_NAME = "models/gemini-2.5-pro"
 model = genai.GenerativeModel(MODEL_NAME)
 print(f"✅ Using Gemini model: {MODEL_NAME}")
 
