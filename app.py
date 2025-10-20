@@ -24,6 +24,18 @@ class AnalyzerInput(BaseModel):
     job_text: str
     raw_output: dict
 
+
+@app.get("/models")
+def list_available_models():
+    models = []
+    for m in genai.list_models():
+        models.append({
+            "name": m.name,
+            "methods": m.supported_generation_methods
+        })
+    return {"available_models": models}
+
+
 @app.post("/clean")
 def clean_output(payload: AnalyzerInput):
     prompt = f"""
